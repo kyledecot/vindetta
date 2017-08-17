@@ -7,10 +7,9 @@ module Vindetta
     program_desc 'Utility for generating Vehicle Identification Numbers (VINs)'
 
     command :generate do |c|
-      c.desc "Generates a random VIN"
-
-      c.action do
-        puts Vindetta::Generator.generate
+      c.flag :foobar
+      c.action do |global, options, args|
+        puts Vindetta::Generator.generate(options)
       end
     end
   end
