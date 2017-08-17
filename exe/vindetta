@@ -1,16 +1,19 @@
 #!/usr/bin/env ruby
 
-require "optparse"
 require "vindetta"
+require "gli"
 
-options = {}
-OptionParser.new do |opts|
-  opts.banner = "Usage: vindetta [command] [options]"
+include GLI::App
 
-  opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
-    options[:verbose] = v
+program_desc 'Utility for generating Vehicle Identification Numbers (VINs)'
+
+command :generate do |c|
+  c.desc "Generates a random VIN"
+
+  c.action do
+    puts Vindetta::Generator.generate
   end
-end.parse!
+end
 
-p options
-p ARGV
+
+exit run(ARGV)

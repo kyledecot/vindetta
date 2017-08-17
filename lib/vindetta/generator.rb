@@ -9,7 +9,7 @@ module Vindetta
 
 
     def self.generate(options = {})
-
+      VINS.sample
     end
   end
 end
