@@ -1,15 +1,30 @@
+# private static int transliterate(char c) {
+# 	return "0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ".indexOf(c) % 10;
+# }
+#
+# private static char getCheckDigit(String vin) {
+# 	String map = "0123456789X";
+# 	String weights = "8765432X098765432";
+# 	int sum = 0;
+# 	for (int i = 0; i < 17; ++i) {
+# 		sum += transliterate(vin.charAt(i)) * map.indexOf(weights.charAt(i));
+# 	}
+# 	return map.charAt(sum % 11);
+# }
+#
+# private static boolean validate(String vin) {
+#     if(vin.length()!=17) return false;
+# 	return getCheckDigit(vin) == vin.charAt(8);
+# }
+
 module Vindetta
   class Transliterator
-    MAPPING = {
-      'A' => 1, 'B' => 2, 'C' => 3, 'D' => 4, 'E' => 5, 'F' => 6, 'G' => 7, 'H' => 8,
-      'J' => 1, 'K' => 2, 'L' => 3, 'M' => 4, 'N' => 5, 'P' => 7, 'R' => 9,
-      'S' => 2, 'T' => 3, 'U' => 4, 'V' => 5, 'W' => 6, 'X' => 7, 'Y' => 8, 'Z' => 9
-    }
+    MAPPING = "0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ".split("").freeze
 
-    def self.run(vin)
-      vin.each_char.map do |character|
-        MAPPING.fetch(character, 'X')
-      end
+    def self.run(character)
+      index = MAPPING.find_index(character)
+      raise Vindetta::InvalidCharacter unless index
+      index % 10
     end
   end
 end
