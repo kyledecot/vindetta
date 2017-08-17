@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "vindetta"
+
+puts "it works"
