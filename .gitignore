@@ -8,8 +8,5 @@
 /spec/reports/
 /tmp/
 
-# byebug
-.byebug_history
-
 # rspec failure tracking
 .rspec_status
