@@ -1,5 +1,16 @@
 #!/usr/bin/env ruby
 
+require "optparse"
 require "vindetta"
 
-puts Vindetta.random
+options = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: vindetta [command] [options]"
+
+  opts.on("-v", "--[no-]verbose", "Run verbosely") do |v|
+    options[:verbose] = v
+  end
+end.parse!
+
+p options
+p ARGV
