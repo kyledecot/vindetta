@@ -2,4 +2,4 @@
 
 require "vindetta"
 
-puts "it works"
+puts Vindetta.random
