@@ -4,7 +4,7 @@ module Vindetta
   class CLI
     extend GLI::App
 
-    program_desc 'Utility for generating Vehicle Identification Numbers (VINs)'
+    program_desc 'Vehicle Identification Number (VIN) CLI'
 
     desc 'Transliterates a VIN character'
     arg_name 'character'
