@@ -4,7 +4,7 @@ module Vindetta
 
     def self.run(character)
       index = MAPPING.find_index(character)
-      raise Vindetta::InvalidCharacter.new(character) unless index
+      raise Vindetta::InvalidCharacter, character unless index
       index % 10
     end
   end

@@ -10,7 +10,9 @@ RSpec.describe Vindetta::Transliterator do
 
     context 'when the character is invalid' do
       it 'raises an error' do
-        expect { described_class.run('Q') }.to raise_error(Vindetta::InvalidCharacter)
+        expect do
+          described_class.run('Q')
+        end.to raise_error(Vindetta::InvalidCharacter)
       end
     end
   end
