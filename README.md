@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/kyledecot/vindetta.svg?branch=master)](https://travis-ci.org/kyledecot/vindetta)
 [![Code Climate](https://codeclimate.com/github/kyledecot/vindetta/badges/gpa.svg)](https://codeclimate.com/github/kyledecot/vindetta)
-[![Test Coverage](https://codeclimate.com/github/kyledecot/vindetta/badges/coverage.svg)](https://codeclimate.com/github/kyledecot/vindetta/coverage)
 
 ## Installation
 
