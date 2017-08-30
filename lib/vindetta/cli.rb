@@ -16,8 +16,8 @@ module Vindetta
 
     desc 'Generates a random vin'
     command :generate do |c|
-      c.action do |_global, options, _args|
-        puts Vindetta::Generator.generate(options)
+      c.action do |_global, _options, _args|
+        puts Vindetta::Generator.generate
       end
     end
   end
