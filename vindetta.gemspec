@@ -22,6 +22,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "gli", "~> 2.16"
+  spec.add_dependency "activemodel"
+  spec.add_dependency "activesupport"
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
