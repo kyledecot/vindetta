@@ -1,5 +1,5 @@
-require "active_support"
-require "active_model"
+require 'active_support'
+require 'active_model'
 
 module Vindetta
   class Vin

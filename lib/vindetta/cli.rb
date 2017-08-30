@@ -1,4 +1,4 @@
-require "gli"
+require 'gli'
 
 module Vindetta
   class CLI
@@ -6,9 +6,14 @@ module Vindetta
 
     program_desc 'Utility for generating Vehicle Identification Numbers (VINs)'
 
+    command :transliterate do |c|
+      c.action do |_global, _options, args|
+        puts Vindetta::Transliterator.run(args.first)
+      end
+    end
+
     command :generate do |c|
-      c.flag :foobar
-      c.action do |global, options, args|
+      c.action do |_global, options, _args|
         puts Vindetta::Generator.generate(options)
       end
     end

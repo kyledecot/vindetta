@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require "pry"
-require "bundler/setup"
-require "vindetta"
+require 'pry'
+require 'bundler/setup'
+require 'vindetta'
 
 Pry.start
