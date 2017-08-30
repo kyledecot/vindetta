@@ -6,8 +6,8 @@ module Vindetta
 
     program_desc 'Utility for generating Vehicle Identification Numbers (VINs)'
 
-    desc 'Transliterates a VIN'
-    arg_name 'vin'
+    desc 'Transliterates a VIN character'
+    arg_name 'character'
     command :transliterate do |c|
       c.action do |_global, _options, args|
         puts Vindetta::Transliterator.run(args.first)

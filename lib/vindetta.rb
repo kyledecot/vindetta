@@ -3,7 +3,6 @@ require 'vindetta/generator'
 require 'vindetta/cli'
 require 'vindetta/errors'
 require 'vindetta/transliterator'
-require 'vindetta/check_digit_calculator'
 require 'vindetta/vin'
 
 module Vindetta
