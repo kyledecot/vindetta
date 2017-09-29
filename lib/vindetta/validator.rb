@@ -10,7 +10,7 @@ module Vindetta
 
     def validate(record)
       if record.value.length != LENGTH
-        record.errors.add(:value, "Invalid Length") # TODO: Move to I18n
+        record.errors.add(:value, I18n.t("invalid_length"))
       end
 
       # TODO: Check format
