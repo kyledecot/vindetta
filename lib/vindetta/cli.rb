@@ -8,7 +8,7 @@ module Vindetta
 
     desc 'Transliterates a VIN character'
     arg_name 'character'
-    command :transliterate do |c|
+    command [:transliterate, :t] do |c|
       c.action do |_global, _options, args|
         puts Vindetta::Transliterator.run(args.first)
       end
