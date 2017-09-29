@@ -2,12 +2,10 @@ require "spec_helper"
 
 RSpec.describe Vindetta::Vin do
   describe "#==" do
-    it "works" do
-      v1 = Vindetta::Vin.new("1")
-      v2 = Vindetta::Vin.new("1")
+    let(:first_vin) { create(:vin, :value => "1") }
+    let(:second_vin) { create(:vin, :value => "1") }
 
-      expect(v1).to eq(v2)
-    end
+    it { expect(first_vin).to eq(second_vin) }
   end
 
   describe "#check_digit" do

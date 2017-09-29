@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'bundler', '~> 1.14'
   spec.add_development_dependency 'factory_girl', '~> 4.8.0'
-  spec.add_development_dependency 'guard', '~> 2.14.1'
+  spec.add_development_dependency 'guard-rspec', '~> 4.7.3'
   spec.add_development_dependency 'pry', '~> 0.10'
   spec.add_development_dependency 'rake', '~> 10.0'
   spec.add_development_dependency 'rspec', '~> 3.0'
