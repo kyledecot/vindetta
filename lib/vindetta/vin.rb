@@ -21,5 +21,29 @@ module Vindetta
     def check_digit
       value[8]
     end
+
+    def world_manufacturer_identity
+      value[0..2]
+    end
+
+    alias :wmi :world_manufacturer_identity
+
+    def vehicle_descriptor_section
+      value[3..7]
+    end
+
+    alias :vds :vehicle_descriptor_section
+
+    def model_year
+      value[9]
+    end
+
+    def manufacturing_plant
+      value[10]
+    end
+
+    def serial_number
+      value[11..16]
+    end
   end
 end
