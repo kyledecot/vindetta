@@ -9,4 +9,12 @@ RSpec.describe Vindetta::Vin do
       expect(v1).to eq(v2)
     end
   end
+
+  describe "#check_digit" do
+    let(:valid_vin) { Vindetta::Vin.new("WBANU53578CT17179") }
+
+    it "returns the check digit" do
+      expect(valid_vin.check_digit).to eq("7")
+    end
+  end
 end

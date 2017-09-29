@@ -17,5 +17,9 @@ module Vindetta
     def ==(other)
       self.class == other.class && value == other.value
     end
+
+    def check_digit
+      value[8]
+    end
   end
 end

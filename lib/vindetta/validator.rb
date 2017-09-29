@@ -12,6 +12,8 @@ module Vindetta
       if record.value.length != LENGTH
         record.errors.add(:value, "Invalid Length") # TODO: Move to I18n
       end
+
+      # TODO: Check format
     end
   end
 end
