@@ -1,7 +1,17 @@
+require 'active_model'
+
 module Vindetta
-  class Validator
-    def self.run(vin)
-      Vin.new(vin).valid?
+  class Validator < ActiveModel::Validator
+    LENGTH = 17
+
+    def self.run(value)
+      Vin.new(value).valid?
+    end
+
+    def validate(record)
+      if record.value.length != LENGTH
+        record.errors.add(:value, "Invalid Length") # TODO: Move to I18n
+      end
     end
   end
 end

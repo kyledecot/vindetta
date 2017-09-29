@@ -3,12 +3,10 @@ require 'active_model'
 
 module Vindetta
   class Vin
-    LENGTH = 17
-
     attr_reader :value
     include ActiveModel::Validations
 
-    validates_length_of :value, is: LENGTH
+    validates_with Validator
 
     def initialize(value)
       @value = value
