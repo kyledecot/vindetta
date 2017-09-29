@@ -14,7 +14,14 @@ module Vindetta
       end
     end
 
-    desc 'Generates a random vin'
+    desc 'Validates a VIN'
+    command :validate do |c|
+      c.action do |_global, _options, args|
+        puts Vindetta::Validator.run(args.first)
+      end
+    end
+
+    desc 'Generates a random VIN'
     command :generate do |c|
       c.action do |_global, _options, _args|
         puts Vindetta::Generator.generate
