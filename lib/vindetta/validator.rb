@@ -1,4 +1,4 @@
-require 'active_model'
+require "active_model"
 
 module Vindetta
   class Validator < ActiveModel::Validator
@@ -9,9 +9,7 @@ module Vindetta
     end
 
     def validate(record)
-      if record.value.length != LENGTH
-        record.errors.add(:value, I18n.t("invalid_length"))
-      end
+      record.errors.add(:value, I18n.t("invalid_length")) if record.value.length != LENGTH
 
       # TODO: Check format
     end

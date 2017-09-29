@@ -2,8 +2,8 @@ require "spec_helper"
 
 RSpec.describe Vindetta::Vin do
   describe "#==" do
-    let(:first_vin) { create(:vin, :value => "1") }
-    let(:second_vin) { create(:vin, :value => "1") }
+    let(:first_vin) { create(:vin, value: "1") }
+    let(:second_vin) { create(:vin, value: "1") }
 
     it { expect(first_vin).to eq(second_vin) }
   end

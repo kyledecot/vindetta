@@ -1,5 +1,5 @@
-require 'active_support'
-require 'active_model'
+require "active_support"
+require "active_model"
 
 module Vindetta
   class Vin
@@ -12,7 +12,7 @@ module Vindetta
       @value = value
     end
 
-    alias :eql? :==
+    alias eql? ==
 
     def ==(other)
       self.class == other.class && value == other.value

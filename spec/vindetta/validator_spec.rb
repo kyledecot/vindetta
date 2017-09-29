@@ -1,7 +1,7 @@
-require 'spec_helper'
+require "spec_helper"
 
 RSpec.describe Vindetta::Validator do
-  describe '.run' do
+  describe ".run" do
     context "when the VIN is valid" do
       let(:vin) { "WBANU53578CT17179" }
 
