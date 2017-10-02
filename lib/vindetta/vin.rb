@@ -26,13 +26,13 @@ module Vindetta
       @world_manufacturer_identity ||= WorldManufacturerIdentity.new(value[0..2])
     end
 
-    alias :wmi :world_manufacturer_identity
+    alias wmi world_manufacturer_identity
 
     def vehicle_descriptor_section
       value[3..7]
     end
 
-    alias :vds :vehicle_descriptor_section
+    alias vds vehicle_descriptor_section
 
     def model_year
       value[9]
