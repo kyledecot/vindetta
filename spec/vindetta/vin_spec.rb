@@ -1,6 +1,14 @@
 require "spec_helper"
 
 RSpec.describe Vindetta::Vin do
+  describe "#each" do
+    let(:vin) { create(:vin) }
+
+    it "delegates to value.chars" do
+      expect(vin.value.chars).to eq(vin.each.to_a)
+    end
+  end
+
   describe "#==" do
     let(:first_vin) { create(:vin, value: "1") }
     let(:second_vin) { create(:vin, value: "1") }

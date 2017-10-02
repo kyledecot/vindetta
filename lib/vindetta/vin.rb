@@ -3,8 +3,14 @@ require "active_model"
 
 module Vindetta
   class Vin
-    attr_reader :value
     include ActiveModel::Validations
+    include Enumerable
+
+    def each(&block)
+      @value.chars(&block)
+    end
+
+    attr_reader :value
 
     validates_with Validator
 
