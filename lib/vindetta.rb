@@ -5,6 +5,7 @@ require "vindetta/transliterator"
 require "vindetta/validator"
 require "vindetta/version"
 require "vindetta/vin"
+require "vindetta/vin/world_manufacturer_identity"
 
 module Vindetta
   def self.generate(options = {})

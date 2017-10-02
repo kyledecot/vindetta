@@ -23,7 +23,7 @@ module Vindetta
     end
 
     def world_manufacturer_identity
-      value[0..2]
+      @world_manufacturer_identity ||= WorldManufacturerIdentity.new(value[0..2])
     end
 
     alias :wmi :world_manufacturer_identity
