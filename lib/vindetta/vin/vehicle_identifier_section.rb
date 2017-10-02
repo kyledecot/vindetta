@@ -16,7 +16,7 @@ module Vindetta
       end
 
       def year
-        @year ||= self.class.data["year"].first
+        @year ||= self.class.data.dig("year", value[0])
       end
 
       private
