@@ -18,8 +18,9 @@ RSpec.describe Vindetta::Vin do
 
   describe "#world_manufacturer_identity" do
     let(:vin) { create(:vin, :value => "1T7HT2B2511002099") }
+    let(:wmi) { create(:wmi, :value => "1T7")}
 
-    it { expect(vin.world_manufacturer_identity).to eq("1T7") }
+    it { expect(vin.world_manufacturer_identity).to eq(wmi) }
   end
 
   describe "#vehicle_descriptor_section" do

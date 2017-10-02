@@ -13,6 +13,12 @@ module Vindetta
         @name ||= self.class.data[value]
       end
 
+      alias eql? ==
+
+      def ==(other)
+        self.class == other.class && value == other.value
+      end
+
       def self.data
         @data ||= YAML.load_file(DATA_PATH)
       end
