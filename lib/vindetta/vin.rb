@@ -40,6 +40,10 @@ module Vindetta
 
     alias vds vehicle_descriptor_section
 
+    def vehicle_identifier_section
+      @vehicle_identifier_section ||= VehicleIdentifierSection.new(value[9..16])
+    end 
+
     def model_year
       value[9]
     end
