@@ -12,4 +12,10 @@ FactoryGirl.define do
 
     initialize_with { new(value) }
   end
+
+  factory :vds, class: Vindetta::Vin::VehicleDescriptorSection do
+    value { "HT2B2" }
+
+    initialize_with { new(value) }
+  end
 end

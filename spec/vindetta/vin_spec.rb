@@ -33,8 +33,9 @@ RSpec.describe Vindetta::Vin do
 
   describe "#vehicle_descriptor_section" do
     let(:vin) { create(:vin, value: "1T7HT2B2511002099") }
+    let(:vds) { create(:vds, value: "HT2B2") }
 
-    it { expect(vin.vehicle_descriptor_section).to eq("HT2B2") }
+    it { expect(vin.vehicle_descriptor_section).to eq(vds) }
   end
 
   describe "#model_year" do

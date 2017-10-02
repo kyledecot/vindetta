@@ -35,7 +35,7 @@ module Vindetta
     alias wmi world_manufacturer_identity
 
     def vehicle_descriptor_section
-      value[3..7]
+      @vehicle_descriptor_section ||= VehicleDescriptorSection.new(value[3..7])
     end
 
     alias vds vehicle_descriptor_section
