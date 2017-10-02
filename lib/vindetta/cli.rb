@@ -21,6 +21,14 @@ module Vindetta
       end
     end
 
+    desc "Decodes a VIN"
+    command %i[decode d] do |c|
+      c.action do |_global, _options, _args|
+        vin = Vindetta::Vin.new(_args.first)
+        puts Vindetta::Decoder.decode(vin)
+      end
+    end
+
     desc "Generates a random VIN"
     command %i[generate g] do |c|
       c.action do |_global, _options, _args|

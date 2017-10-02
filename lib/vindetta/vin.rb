@@ -28,6 +28,11 @@ module Vindetta
       value[8]
     end
 
+
+    def year
+      "TODO"
+    end
+
     def world_manufacturer_identity
       @world_manufacturer_identity ||= WorldManufacturerIdentity.new(value[0..2])
     end
@@ -42,7 +47,7 @@ module Vindetta
 
     def vehicle_identifier_section
       @vehicle_identifier_section ||= VehicleIdentifierSection.new(value[9..16])
-    end 
+    end
 
     def model_year
       value[9]
