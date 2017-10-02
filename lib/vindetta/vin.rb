@@ -28,9 +28,8 @@ module Vindetta
       value[8]
     end
 
-
     def year
-      "TODO"
+      vehicle_identifier_section.year
     end
 
     def world_manufacturer_identity
