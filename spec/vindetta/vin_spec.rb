@@ -26,7 +26,7 @@ RSpec.describe Vindetta::Vin do
 
   describe "#wmi" do
     let(:vin) { create(:vin, value: "1T7HT2B2511002099") }
-    let(:wmi) { create(:wmi, value: "1T7") }
+    let(:wmi) { create(:wmi, raw_vin: "1T7HT2B2511002099") }
 
     it { expect(vin.wmi).to eq(wmi) }
   end

@@ -16,13 +16,31 @@ FactoryGirl.define do
   end
 
   factory :wmi, class: Vindetta::Vin::Wmi do
-    vin
+    vin { create(:vin, :value => raw_vin) }
+
+    transient {
+      raw_vin { generate(:vin) }
+    }
 
     initialize_with { new(vin) }
   end
 
   factory :vds, class: Vindetta::Vin::Vds do
-    vin
+    vin { create(:vin, :value => raw_vin) }
+
+    transient {
+      raw_vin { generate(:vin) }
+    }
+
+    initialize_with { new(vin) }
+  end
+
+  factory :vis, class: Vindetta::Vin::Vis do
+    vin { create(:vin, :value => raw_vin) }
+
+    transient {
+      raw_vin { generate(:vin) }
+    }
 
     initialize_with { new(vin) }
   end

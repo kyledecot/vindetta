@@ -14,7 +14,7 @@ module Vindetta
       alias eql? ==
 
       def value
-        @vin[0..2]
+        @vin[0..2].join("")
       end
 
       def ==(other)

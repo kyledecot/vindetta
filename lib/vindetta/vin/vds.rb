@@ -8,7 +8,7 @@ module Vindetta
       end
 
       def value
-        @vin[3..7]
+        @vin[3..7].join("")
       end
 
       alias eql? ==

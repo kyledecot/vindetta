@@ -20,15 +20,16 @@ module Vindetta
       end
 
       def value
-        @vin[9..16]
+        @vin[9..16].join("")
       end
 
       def year
         @year ||= begin
           years = self.class.data.dig("year", value[0])
 
+          # TODO: Replace this w/ a constant of alpha characters and check against that
           begin
-            Integer(@seventh)
+            Integer(seventh)
             years[0]
           rescue ArgumentError
             years[1]
