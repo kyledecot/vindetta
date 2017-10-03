@@ -6,6 +6,13 @@ module Vindetta
 
     program_desc "Vehicle Identification Number (VIN) CLI"
 
+    desc "Version"
+    command %i[version v] do |c|
+      c.action do
+        puts Vindetta::VERSION
+      end
+    end
+
     desc "Transliterates a VIN character"
     arg_name "character"
     command %i[transliterate t] do |c|
