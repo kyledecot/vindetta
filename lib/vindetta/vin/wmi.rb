@@ -1,12 +1,10 @@
 module Vindetta
   class Vin
-    class WorldManufacturerIdentity
-      DATA_PATH = File.expand_path("../../data/world_manufacturer_identity.yaml", __FILE__)
+    class Wmi
+      DATA_PATH = File.expand_path("../../data/wmi.yaml", __FILE__)
 
-      attr_accessor :value
-
-      def initialize(value)
-        @value = value
+      def initialize(vin)
+        @vin = vin
       end
 
       def name
@@ -14,6 +12,10 @@ module Vindetta
       end
 
       alias eql? ==
+
+      def value
+        @vin[0..2]
+      end
 
       def ==(other)
         self.class == other.class && value == other.value

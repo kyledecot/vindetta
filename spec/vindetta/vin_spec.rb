@@ -17,25 +17,25 @@ RSpec.describe Vindetta::Vin do
   end
 
   describe "#check_digit" do
-    let(:valid_vin) { Vindetta::Vin.new("WBANU53578CT17179") }
+    let(:valid_vin) { create(:vin, value: "WBANU53578CT17179") }
 
     it "returns the check digit" do
       expect(valid_vin.check_digit).to eq("7")
     end
   end
 
-  describe "#world_manufacturer_identity" do
+  describe "#wmi" do
     let(:vin) { create(:vin, value: "1T7HT2B2511002099") }
     let(:wmi) { create(:wmi, value: "1T7") }
 
-    it { expect(vin.world_manufacturer_identity).to eq(wmi) }
+    it { expect(vin.wmi).to eq(wmi) }
   end
 
-  describe "#vehicle_descriptor_section" do
+  describe "#vds" do
     let(:vin) { create(:vin, value: "1T7HT2B2511002099") }
-    let(:vds) { create(:vds, value: "HT2B2") }
+    let(:vds) { create(:vds, vin: vin) }
 
-    it { expect(vin.vehicle_descriptor_section).to eq(vds) }
+    it { expect(vin.vds).to eq(vds) }
   end
 
   describe "#model_year" do

@@ -1,10 +1,14 @@
 module Vindetta
   class Vin
-    class VehicleDescriptorSection
+    class Vds
       attr_reader :value
 
-      def initialize(value)
-        @value = value
+      def initialize(vin)
+        @vin = vin
+      end
+
+      def value
+        @vin[3..7]
       end
 
       alias eql? ==

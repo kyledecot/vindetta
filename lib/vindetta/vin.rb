@@ -10,6 +10,10 @@ module Vindetta
       @value.chars(&block)
     end
 
+    def [](index)
+      each[index]
+    end
+
     attr_reader :value
 
     validates_with Validator
@@ -29,23 +33,28 @@ module Vindetta
     end
 
     def year
-      vehicle_identifier_section.year
+      vis.year
     end
 
-    def world_manufacturer_identity
-      @world_manufacturer_identity ||= WorldManufacturerIdentity.new(value[0..2])
+    ##
+    # World Manufacturer Identity
+    #
+    def wmi
+      @wmi ||= Wmi.new(self)
     end
 
-    alias wmi world_manufacturer_identity
-
-    def vehicle_descriptor_section
-      @vehicle_descriptor_section ||= VehicleDescriptorSection.new(value[3..7])
+    # #
+    # Vehicle Descriptor Section
+    #
+    def vds
+      @vds ||= Vds.new(self)
     end
 
-    alias vds vehicle_descriptor_section
-
-    def vehicle_identifier_section
-      @vehicle_identifier_section ||= VehicleIdentifierSection.new(value[9..16])
+    ##
+    # Vehicle Identifier Section
+    #
+    def vis
+      @vis ||= Vis.new(self)
     end
 
     def model_year
