@@ -8,7 +8,7 @@ module Vindetta
 
     desc "Version"
     command %i[version v] do |c|
-      c.action do
+      c.action do |_global, _options, args|
         puts Vindetta::VERSION
       end
     end
