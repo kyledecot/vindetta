@@ -462,6 +462,9 @@ wmi:
   9FB: Renault Colombia
 
 region:
-  'South Africa': [A, B, C, D, E, F, G, H]
+  'Africa': [A, B, C, D, E, F, G, H]
   'Asia': [J, K, L, M, N, O, P, Q, R]
+  'Europe': [S, T, U, V, W, X, Y, Z]
   'North America': ['1', '2', '3', '4', '5']
+  'Oceania': ['6', '7']
+  'South America': ['8', '9', '0']
