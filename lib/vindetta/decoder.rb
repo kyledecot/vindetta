@@ -2,7 +2,8 @@ module Vindetta
   class Decoder
     def self.decode(vin)
       {
-        :year => vin.year
+        :year => vin.year,
+        :region => vin.region
       }
     end
   end

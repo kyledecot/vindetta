@@ -8,13 +8,23 @@ module Vindetta
       end
 
       def name
-        @name ||= self.class.data[value]
+        @name ||= self.class.data["wmi"][value]
       end
 
       alias eql? ==
 
       def value
         @vin[0..2].join("")
+      end
+
+      def region
+        @name ||= begin
+          regions = self.class.data["region"] # TODO: Pull this out into private method
+
+          regions.detect do |key, characters_for_region|
+            break key if characters_for_region.include?(value[0])
+          end
+        end
       end
 
       def ==(other)

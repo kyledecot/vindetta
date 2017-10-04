@@ -36,6 +36,10 @@ module Vindetta
       vis.year
     end
 
+    def region
+      wmi.region
+    end
+
     ##
     # World Manufacturer Identity
     #
