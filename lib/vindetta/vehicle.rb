@@ -1,6 +1,12 @@
 module Vindetta
   class Vehicle
+    def self.attributes
+      @attributes ||= []
+    end
+
     def self.has_value(name, variable_id, options = {})
+      attributes << name
+
       define_method name do
         value = value_for(variable_id)
 
@@ -20,14 +26,17 @@ module Vindetta
     has_value :model, 28
     has_value :doors, 14, type: :int
     has_value :model_year, 29, type: :int
+    has_value :windows, 40, type: :int
+    has_value :seat_belts_type, 79
+    has_value :manufacturer_name, 27
+    has_value :vehicle_type, 39
+    has_value :plant_city, 31
+    has_value :body_class, 5
 
     def to_json
-      {
-        :doors => doors,
-        :model_year => model_year,
-        :model => model,
-        :make => make
-      }
+      self.class.attributes.map do |a|
+        [a, send(a)]
+      end.to_h
     end
 
     def value_for(variable_id)
