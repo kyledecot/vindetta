@@ -26,7 +26,7 @@ module Vindetta
     desc "Decodes a VIN"
     command %i[decode d] do |c|
       c.action do |_global, _options, _args|
-        puts Vindetta::Decoder.decode_vin(_args.first)
+        puts Vindetta::Decoder.decode_vin(_args.first).to_json
       end
     end
 
