@@ -24,14 +24,15 @@ module Vindetta
 
     has_value :make, 26
     has_value :model, 28
-    has_value :doors, 14, type: :int
-    has_value :model_year, 29, type: :int
-    has_value :windows, 40, type: :int
+    has_value :year, 29, type: :int
+    has_value :number_of_doors, 14, type: :int
+    has_value :number_of_windows, 40, type: :int
     has_value :seat_belts_type, 79
     has_value :manufacturer_name, 27
     has_value :vehicle_type, 39
     has_value :plant_city, 31
     has_value :body_class, 5
+    has_value :primary_fuel_type, 24
 
     def to_json
       self.class.attributes.map do |a|

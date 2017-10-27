@@ -11,16 +11,16 @@ RSpec.describe Vindetta::Vehicle do
     it { expect(vehicle.model).to eq("Volt") }
   end
 
-  describe ".model_year" do
-    it { expect(vehicle.model_year).to eq(2017) }
+  describe ".year" do
+    it { expect(vehicle.year).to eq(2017) }
   end
 
-  describe ".doors" do
-    it { expect(vehicle.doors).to eq(4) }
+  describe ".number_of_doors" do
+    it { expect(vehicle.number_of_doors).to eq(4) }
   end
 
-  describe ".windows" do
-    it { expect(vehicle.windows).to eq(6) }
+  describe ".number_of_windows" do
+    it { expect(vehicle.number_of_windows).to eq(6) }
   end
 
   describe ".seat_belts_type" do
@@ -41,5 +41,9 @@ RSpec.describe Vindetta::Vehicle do
 
   describe ".body_class" do
     it { expect(vehicle.body_class).to eq("Hatchback/Liftback/Notchback") }
+  end
+
+  describe ".primary_fuel_type" do
+    it { expect(vehicle.primary_fuel_type).to eq("Electric") }
   end
 end
