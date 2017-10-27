@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "activesupport", "~> 5.1"
   spec.add_dependency "gli", "~> 2.16"
   spec.add_dependency "i18n", "~> 0.8.6"
+  spec.add_dependency "httparty"
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "factory_girl", "~> 4.8.0"
@@ -35,4 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop", "~> 0.49"
   spec.add_development_dependency "webmock", "~> 3.0.1"
+  spec.add_development_dependency "vcr"
 end
