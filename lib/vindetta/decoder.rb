@@ -1,4 +1,5 @@
 require "httparty"
+require "vindetta/decoder/result"
 
 module Vindetta
   class Decoder
@@ -6,7 +7,7 @@ module Vindetta
       result = HTTParty.get("https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/#{vin}?format=json")
       json = JSON.parse(result.body)
 
-      Vehicle.new(json["Results"])
+      Result.new(json["Results"])
     end
   end
 end

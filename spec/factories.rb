@@ -45,7 +45,7 @@ FactoryGirl.define do
     initialize_with { new(vin) }
   end
 
-  factory :vehicle, class: Vindetta::Vehicle do
+  factory :vehicle, class: Vindetta::Decoder::Result do
     variables do
       [{"Value"=>"", "ValueId"=>"", "Variable"=>"Suggested VIN", "VariableId"=>142},
  {"Value"=>"0 - VIN decoded clean. Check Digit (9th position) is correct", "ValueId"=>"0", "Variable"=>"Error Code", "VariableId"=>143},

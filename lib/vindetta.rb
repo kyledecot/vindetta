@@ -9,7 +9,6 @@ require "vindetta/vin"
 require "vindetta/vin/wmi"
 require "vindetta/vin/vds"
 require "vindetta/vin/vis"
-require "vindetta/vehicle"
 
 module Vindetta
   def self.generate(options = {})

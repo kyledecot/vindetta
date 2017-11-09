@@ -1,6 +1,6 @@
 require "spec_helper"
 
-RSpec.describe Vindetta::Vehicle do
+RSpec.describe Vindetta::Decoder::Result do
   let(:vehicle) { create(:vehicle) }
 
   describe ".make" do
