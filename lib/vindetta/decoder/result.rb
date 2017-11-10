@@ -16,6 +16,9 @@ module Vindetta
       has_value :plant_city, 31
       has_value :body_class, 5
       has_value :primary_fuel_type, 24
+      has_value :engine_configuration, 64
+      has_value :manufacturer_id, 157, type: :int
+      has_value :primary_fuel_type, 24
 
       def initialize(variables)
         @variables = variables
