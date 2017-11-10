@@ -27,7 +27,9 @@ module Vindetta
     desc "Decodes a VIN"
     command %i[decode d] do |c|
       c.action do |_global, _options, _args|
-        vin = STDIN.gets.chomp || _args.first
+        vin = _args.first
+
+        exit_now!("vin is required") if vin.nil?
 
         puts Vindetta::Decoder.decode_vin(vin).to_json
       end
