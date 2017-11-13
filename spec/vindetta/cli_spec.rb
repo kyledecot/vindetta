@@ -9,6 +9,12 @@ RSpec.describe Vindetta::CLI do
     end
 
     describe "decode", :vcr do
+      # describe "without vin" do
+      #   it "exits w/ non-zero" do
+      #     expect { described_class.run(["decode"]) }.to terminate.with_code(1)
+      #   end
+      # end
+
       describe "when given a vin" do
         it "decodes it" do
           output = capture_stdout { described_class.run(["decode", "1B7HC16X9WS651631"]) }
