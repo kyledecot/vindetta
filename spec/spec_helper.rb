@@ -1,8 +1,6 @@
 require "bundler/setup"
-require "webmock/rspec"
 require "vindetta"
 require "pry"
-require 'vcr'
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each { |f| require f }
 
