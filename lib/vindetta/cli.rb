@@ -29,10 +29,9 @@ module Vindetta
       c.action do |_global, _options, _args|
         vin = _args.first
 
-        puts "got here"
-        # exit_now!("vin is required") if vin.nil?
-        #
-        # puts Vindetta::Decoder.decode_vin(vin).to_json
+        exit_now!("vin is required") if vin.nil?
+
+        puts Vindetta::Decoder.decode_vin(vin).to_json
       end
     end
 
