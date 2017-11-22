@@ -26,7 +26,9 @@ module Vindetta
 
         exit_now!("vin is required", 1) if vin.nil? # TODO: Replace w/ I18n
 
-        puts Vindetta::Validator.run(vin)
+        valid = Vindetta::Validator.run(vin)
+
+        puts valid ? 1 : 0
       end
     end
 
