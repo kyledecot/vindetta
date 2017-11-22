@@ -2,25 +2,23 @@ require "spec_helper"
 
 RSpec.describe Vindetta::CLI do
   describe ".run" do
-    describe "generate", :vcr do
-      it "works with no arguments" do
-        expect { described_class.run(["generate"]) }.to output(/^[0-9A-Z+]{,17}$/).to_stdout
+    with_command "decode" do
+      with_args [] do
+        it { is_expected.to have_exit_code(1) }
+      end
+
+      with_args ["1G3AE37X9EW325440"] do
+        it { is_expected.to have_exit_code(0) }
       end
     end
 
-    describe "decode", :vcr do
-      # describe "without vin" do
-      #   it "exits w/ non-zero" do
-      #     expect { described_class.run(["decode"]) }.to terminate.with_code(1)
-      #   end
-      # end
+    with_command "validate" do
+      with_args [] do
+        it { is_expected.to have_exit_code(1) }
+      end
 
-      describe "when given a vin" do
-        it "decodes it" do
-          output = capture_stdout { described_class.run(["decode", "1B7HC16X9WS651631"]) }
-
-          expect(output).to be_a(String)
-        end
+      with_args ["1G3AE37X9EW325440"] do
+        it { is_expected.to have_exit_code(0) }
       end
     end
   end
