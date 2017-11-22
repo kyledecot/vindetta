@@ -25,7 +25,7 @@ module Vindetta
       end
 
       def inspect
-        "#<Vindetta::Decoder::Response:#{"0x00%x" % (object_id << 1)}>"
+        "#<Vindetta::Decoder::Response:#{format('0x00%x', (object_id << 1))}>"
       end
 
       def to_json

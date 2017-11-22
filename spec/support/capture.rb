@@ -1,6 +1,7 @@
 module Capture
   def capture_stdout
-    old_stdout, $stdout = $stdout, StringIO.new
+    old_stdout = $stdout
+    $stdout = StringIO.new
     yield
     $stdout.string
   ensure
@@ -8,7 +9,8 @@ module Capture
   end
 
   def capture_stderr
-    old_stderr, $stderr = $stderr, StringIO.new
+    old_stderr = $stderr
+    $stderr = StringIO.new
     yield
     $stderr.string
   ensure

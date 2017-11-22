@@ -26,10 +26,13 @@ module CLIMacros
       end
     end
 
-    describe "#{command}", *describe_args do
+    describe command.to_s, *describe_args do
       subject do
         begin
-          old_stdout, old_stderr, $stdout, $stderr = $stdout, $stderr, StringIO.new, StringIO.new
+          old_stdout = $stdout
+          old_stderr = $stderr
+          $stdout = StringIO.new
+          $stderr = StringIO.new
 
           @exit_code = described_class.run([command] + command_args)
           @stdout = $stdout.string
