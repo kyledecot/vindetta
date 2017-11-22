@@ -1,5 +1,9 @@
 require "gli"
 require "vindetta/version"
+require "i18n"
+
+I18n.load_path << Dir["./lib/vindetta/locale/*.yml"]
+I18n.backend.load_translations
 
 module Vindetta
   class CLI
@@ -24,7 +28,7 @@ module Vindetta
       c.action do |_global, _options, args|
         vin = args.first
 
-        exit_now!("vin is required", 1) if vin.nil? # TODO: Replace w/ I18n
+        exit_now!(I18n.t("required"), 1) if vin.nil?
 
         valid = Vindetta::Validator.run(vin)
 
@@ -38,7 +42,7 @@ module Vindetta
       c.action do |_global, _options, args|
         vin = args.first
 
-        exit_now!("vin is required", 1) if vin.nil? # TODO: Replace w/ I18n
+        exit_now!(I18n.t("required"), 1) if vin.nil?
 
         puts Vindetta::Decoder.decode_vin(vin).to_json
       end

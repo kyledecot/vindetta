@@ -1,2 +1,3 @@
 en:
+  required: "vin is required"
   invalid_length: "Invalid Length"
