@@ -1,4 +1,5 @@
 require "gli"
+require "vindetta/version"
 
 module Vindetta
   class CLI
