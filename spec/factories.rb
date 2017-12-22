@@ -9,42 +9,6 @@ FactoryBot.define do
     ].sample
   end
 
-  factory :vin, class: Vindetta::Vin do
-    value { generate(:vin) }
-
-    initialize_with { new(value) }
-  end
-
-  factory :wmi, class: Vindetta::Vin::Wmi do
-    vin { create(:vin, value: raw_vin) }
-
-    transient do
-      raw_vin { generate(:vin) }
-    end
-
-    initialize_with { new(vin) }
-  end
-
-  factory :vds, class: Vindetta::Vin::Vds do
-    vin { create(:vin, value: raw_vin) }
-
-    transient do
-      raw_vin { generate(:vin) }
-    end
-
-    initialize_with { new(vin) }
-  end
-
-  factory :vis, class: Vindetta::Vin::Vis do
-    vin { create(:vin, value: raw_vin) }
-
-    transient do
-      raw_vin { generate(:vin) }
-    end
-
-    initialize_with { new(vin) }
-  end
-
   factory :vehicle, class: Vindetta::Decoder::Result do
     variables do
       [{ "Value" => "", "ValueId" => "", "Variable" => "Suggested VIN", "VariableId" => 142 },

@@ -9,6 +9,12 @@ RSpec.describe Vindetta::Validator do
     end
 
     context "when the VIN is invalid" do
+      context "when the check digit is wrong" do
+        let(:vin) { "JN8AR16Y0RW090362" }
+
+        it { expect(described_class.run(vin)).to be(false) }
+      end
+
       context "when the VIN is the incorrect length" do
         let(:vin) { "WBANU53578CT1" }
 
