@@ -1,5 +1,9 @@
 module Vindetta
   class Generator
+    def self.vin(options = {})
+      generate(options)
+    end
+
     def self.generate(_options = {})
       fetch
     end

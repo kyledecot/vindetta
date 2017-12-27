@@ -42,7 +42,7 @@ module Vindetta
 
         exit_now!(I18n.t("required"), 1) if vin.nil?
 
-        puts Vindetta::Decoder.decode_vin(vin).to_json
+        puts Vindetta::Decoder.vin(vin).to_json
       end
     end
 

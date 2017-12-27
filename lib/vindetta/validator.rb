@@ -5,6 +5,10 @@ module Vindetta
     MAP = "0123456789X".chars
     WEIGHTS = "8765432X098765432".chars
 
+    def self.vin(vin)
+      run(vin)
+    end
+
     def self.run(value)
       return false unless value.length == LENGTH
 

@@ -4,7 +4,7 @@ require "json"
 
 module Vindetta
   class Decoder
-    def self.decode_vin(vin)
+    def self.vin(vin)
       Result.new(Api.get(vin)["Results"])
     end
 
@@ -25,7 +25,7 @@ module Vindetta
     end
 
     def self.year(vin)
-      decode_vin(vin).year
+      vin(vin).year
     end
 
     def self.production_number(vin)
