@@ -27,5 +27,9 @@ module Vindetta
     def self.year(vin)
       decode_vin(vin).year
     end
+
+    def self.production_number(vin)
+      vin[11..16]
+    end
   end
 end

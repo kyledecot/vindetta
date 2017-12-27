@@ -20,4 +20,8 @@ RSpec.describe Vindetta::Decoder do
   describe ".year" do
     it { expect(described_class.year("1JTHL6511HT155941")).to eq(1987) }
   end
+
+  describe ".production_number" do
+    it { expect(described_class.production_number("1JTHL6511HT155941")).to eq("155941") }
+  end
 end
