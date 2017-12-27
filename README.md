@@ -22,7 +22,25 @@ Or install it yourself as:
 ## Usage
 
 ```bash
-$ vindetta generate
+NAME
+    vindetta - Vehicle Identification Number (VIN) CLI
+
+SYNOPSIS
+    vindetta [global options] command [command options] [arguments...]
+
+VERSION
+    0.16.0
+
+GLOBAL OPTIONS
+    --help    - Show this message
+    --version - Display the program version
+
+COMMANDS
+    decode, d        - Decodes a VIN
+    generate, g      - Generates a random VIN
+    help             - Shows a list of commands or help for one command
+    transliterate, t - Transliterates a VIN character
+    validate, v      - Validates a VIN
 ```
 
 ## Development
