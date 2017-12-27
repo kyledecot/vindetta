@@ -1,13 +1,31 @@
-require "httparty"
 require "vindetta/decoder/result"
+require "net/http"
+require "json"
 
 module Vindetta
   class Decoder
     def self.decode_vin(vin)
-      result = HTTParty.get("https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/#{vin}?format=json")
-      json = JSON.parse(result.body)
+      Result.new(Api.get(vin)["Results"])
+    end
 
-      Result.new(json["Results"])
+    def self.plant_code(vin)
+      vin[10]
+    end
+
+    def self.check_digit(vin)
+      vin[8]
+    end
+
+    def self.wmi(vin)
+      vin[0..2]
+    end
+
+    def self.vds(vin)
+      vin[3..7]
+    end
+
+    def self.year(vin)
+      decode_vin(vin).year
     end
   end
 end

@@ -24,7 +24,6 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "gli", "~> 2.16"
   spec.add_dependency "i18n", "~> 0.9.1"
-  spec.add_dependency "httparty", "~> 0.15.6"
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "factory_bot", "~> 4.8.2"
