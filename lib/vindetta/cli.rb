@@ -30,7 +30,7 @@ module Vindetta
 
         exit_now!(I18n.t("required"), 1) if vin.nil?
 
-        puts Vindetta::Validator.run(vin)
+        puts Vindetta::Validator.vin(vin)
       end
     end
 
