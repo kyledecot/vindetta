@@ -2,7 +2,7 @@ module Vindetta
   class Validator
     LENGTH = 17
     MAP = "0123456789X".chars
-    WEIGHTS = "8765432X098765432".chars
+    WEIGHTS = "8765432X98765432".chars
 
     def self.vin(vin)
       return false unless vin.length == LENGTH
@@ -11,8 +11,11 @@ module Vindetta
     end
 
     def self.check_digit(vin)
-      check_digit = vin.chars[8]
-      calculated = vin.chars.map.with_index do |c, i|
+      wmi = Decoder.wmi(vin).chars
+      vds = Decoder.vds(vin, :check_digit => false).chars
+      vis = Decoder.vis(vin).chars
+
+      calculated = [wmi, vds, vis].flatten.map.with_index do |c, i|
         Transliterator::run(c) * MAP.find_index(WEIGHTS[i])
       end.sum
 
