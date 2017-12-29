@@ -25,6 +25,10 @@ RSpec.describe Vindetta::Decoder do
     end
   end
 
+  describe ".vis" do
+    it { expect(described_class.vis("1G1RB6S56HU172687")).to eq("HU172687") }
+  end
+
   describe ".year" do
     it { expect(described_class.year("1JTHL6511HT155941")).to eq(1987) }
   end

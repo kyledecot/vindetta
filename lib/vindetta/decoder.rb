@@ -33,6 +33,10 @@ module Vindetta
       vin(vin).year
     end
 
+    def self.vis(vin)
+      vin[9..16]
+    end
+
     def self.production_number(vin)
       vin[11..16]
     end
