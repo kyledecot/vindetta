@@ -14,7 +14,15 @@ RSpec.describe Vindetta::Decoder do
   end
 
   describe ".vds" do
-    it { expect(described_class.vds("1G1RB6S56HU172687")).to eq("RB6S5") }
+    describe "without options" do
+      it { expect(described_class.vds("1G1RB6S56HU172687")).to eq("RB6S56") }
+    end
+
+    describe "with options" do
+      describe ":check_digit" do
+        it { expect(described_class.vds("1G1RB6S56HU172687", :check_digit => false)).to eq("RB6S5") }
+      end
+    end
   end
 
   describe ".year" do

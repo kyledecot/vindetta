@@ -20,8 +20,13 @@ module Vindetta
       vin[0..2]
     end
 
-    def self.vds(vin)
-      vin[3..7]
+    def self.vds(vin, options = {})
+      defaults = { :check_digit => true }
+      options = defaults.merge(options)
+
+      vin[3..8].tap do |vds|
+        vds.chop! unless options[:check_digit]
+      end
     end
 
     def self.year(vin)
