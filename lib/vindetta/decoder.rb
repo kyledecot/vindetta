@@ -4,6 +4,8 @@ require "json"
 
 module Vindetta
   class Decoder
+    CHECK_DIGIT_INDEX = 8
+
     def self.vin(vin)
       Result.new(Api.get(vin)["Results"])
     end
@@ -13,7 +15,7 @@ module Vindetta
     end
 
     def self.check_digit(vin)
-      vin[8]
+      vin[CHECK_DIGIT_INDEX]
     end
 
     def self.wmi(vin)
@@ -24,7 +26,7 @@ module Vindetta
       defaults = { :check_digit => true }
       options = defaults.merge(options)
 
-      vin[3..8].tap do |vds|
+      vin[3..CHECK_DIGIT_INDEX].tap do |vds|
         vds.chop! unless options[:check_digit]
       end
     end

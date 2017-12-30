@@ -5,6 +5,7 @@ require "vindetta/transliterator"
 require "vindetta/validator"
 require "vindetta/api"
 require "vindetta/decoder"
+require "vindetta/calculator"
 require "vindetta/version"
 
 module Vindetta
