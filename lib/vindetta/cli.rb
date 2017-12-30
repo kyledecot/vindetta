@@ -13,15 +13,6 @@ module Vindetta
     version Vindetta::VERSION
     error_device = error_device
 
-    desc "Transliterates a VIN character"
-    arg_name "character"
-
-    command %i[transliterate t] do |c|
-      c.action do |_global, _options, args|
-        puts Vindetta::Transliterator.run(args.first)
-      end
-    end
-
     desc "Validates a VIN"
 
     command %i[validate v] do |c|

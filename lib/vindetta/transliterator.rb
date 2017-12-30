@@ -1,15 +1,17 @@
 module Vindetta
   class Transliterator
-    MAPPING = "0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ".split("").freeze
+    MAPPING = "0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ".chars
 
     def self.vin(vin)
-      vin.chars.map { |c| run(c) }
+      vin.chars.map do |c|
+        index = MAPPING.find_index(c)
+        raise Vindetta::InvalidCharacter, c unless index
+        index % 10
+      end
     end
 
     def self.run(character)
-      index = MAPPING.find_index(character)
-      raise Vindetta::InvalidCharacter, character unless index
-      index % 10
+      vin("#{character}")[0]
     end
   end
 end
