@@ -1,11 +1,10 @@
+require "simplecov"
+SimpleCov.start
+
 require "bundler/setup"
 require "vindetta"
-require "pry"
-require "simplecov"
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each { |f| require f }
-
-SimpleCov.start
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = ".rspec_status"

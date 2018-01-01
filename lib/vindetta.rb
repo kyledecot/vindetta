@@ -9,7 +9,4 @@ require "vindetta/calculator"
 require "vindetta/version"
 
 module Vindetta
-  def self.generate(options = {})
-    Generator.generate(options)
-  end
 end
