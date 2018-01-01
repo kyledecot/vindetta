@@ -7,7 +7,7 @@ module Vindetta
     CHECK_DIGIT_INDEX = 8
 
     def self.vin(vin)
-      Result.new(Api.get(vin)["Results"])
+      Result.new(Api.decode(vin)["Results"])
     end
 
     def self.plant_code(vin)
