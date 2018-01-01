@@ -20,7 +20,7 @@ RSpec.describe Vindetta::Decoder do
 
     describe "with options" do
       describe ":check_digit" do
-        it { expect(described_class.vds("1G1RB6S56HU172687", :check_digit => false)).to eq("RB6S5") }
+        it { expect(described_class.vds("1G1RB6S56HU172687", check_digit: false)).to eq("RB6S5") }
       end
     end
   end

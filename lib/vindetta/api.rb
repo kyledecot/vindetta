@@ -5,7 +5,6 @@ module Vindetta
   class Api
     def self.generate
       Net::HTTP.get("randomvin.com", "/getvin.php")
-
     end
 
     def self.get(vin)

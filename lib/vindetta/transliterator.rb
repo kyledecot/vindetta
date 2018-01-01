@@ -11,7 +11,7 @@ module Vindetta
     end
 
     def self.run(character)
-      vin("#{character}")[0]
+      vin(character.to_s)[0]
     end
   end
 end

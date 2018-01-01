@@ -11,7 +11,6 @@ module Vindetta
 
     program_desc "Vehicle Identification Number (VIN) CLI"
     version Vindetta::VERSION
-    error_device = error_device
 
     desc "Validates a VIN"
 

@@ -23,7 +23,7 @@ module Vindetta
     end
 
     def self.vds(vin, options = {})
-      defaults = { :check_digit => true }
+      defaults = { check_digit: true }
       options = defaults.merge(options)
 
       vin[3..CHECK_DIGIT_INDEX].tap do |vds|
