@@ -13,9 +13,9 @@ RSpec.describe Vindetta::Generator do
     it { expect(described_class.vis.length).to eq(8) }
   end
 
-  describe ".generate" do
+  describe ".vin" do
     context "with no options", :vcr do
-      subject { described_class.generate }
+      subject { described_class.vin }
 
       it { is_expected.to be_a_valid_vin }
     end

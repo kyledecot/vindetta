@@ -40,7 +40,7 @@ module Vindetta
 
     command %i[generate g] do |c|
       c.action do |_global, _options, _args|
-        puts Vindetta::Generator.generate
+        puts Vindetta::Generator.vin
       end
     end
   end

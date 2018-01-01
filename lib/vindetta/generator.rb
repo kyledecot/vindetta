@@ -1,11 +1,7 @@
 module Vindetta
   class Generator
     def self.vin(options = {})
-      generate(options)
-    end
-
-    def self.generate(_options = {})
-      fetch
+      fetch(options)
     end
 
     def self.wmi(_options = {})
