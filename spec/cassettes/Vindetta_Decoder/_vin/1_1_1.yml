@@ -35,7 +35,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Wed, 27 Dec 2017 19:05:59 GMT
+      - Sat, 13 Jan 2018 20:04:22 GMT
       Content-Length:
       - '9449'
       Ssl-Tls:
@@ -143,7 +143,7 @@ http_interactions:
         Chassis Type","VariableId":153},{"Value":null,"ValueId":"","Variable":"Other
         Motorcycle Info","VariableId":154}]}'
     http_version: 
-  recorded_at: Wed, 27 Dec 2017 19:06:01 GMT
+  recorded_at: Sat, 13 Jan 2018 20:04:23 GMT
 - request:
     method: get
     uri: https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/1G1RB6S56HU172687?format=json
@@ -181,7 +181,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - "*"
       Date:
-      - Wed, 27 Dec 2017 19:05:59 GMT
+      - Sat, 13 Jan 2018 20:04:22 GMT
       Content-Length:
       - '9449'
       Ssl-Tls:
@@ -289,5 +289,5 @@ http_interactions:
         Chassis Type","VariableId":153},{"Value":null,"ValueId":"","Variable":"Other
         Motorcycle Info","VariableId":154}]}'
     http_version: 
-  recorded_at: Wed, 27 Dec 2017 19:06:01 GMT
+  recorded_at: Sat, 13 Jan 2018 20:04:23 GMT
 recorded_with: VCR 4.0.0
