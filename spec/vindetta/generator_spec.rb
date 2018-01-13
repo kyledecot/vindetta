@@ -2,19 +2,25 @@ require "spec_helper"
 
 RSpec.describe Vindetta::Generator do
   describe ".wmi" do
-    it { expect(described_class.wmi.length).to eq(3) }
+    context "with no options" do
+      it { expect(described_class.wmi).to be_a_valid_wmi }
+    end
   end
 
   describe ".vds" do
-    it { expect(described_class.vds.length).to eq(6) }
+    context "with no options" do
+      it { expect(described_class.vds).to be_a_valid_vds }
+    end
   end
 
   describe ".vis" do
-    it { expect(described_class.vis.length).to eq(8) }
+    context "with no options" do
+      it { expect(described_class.vis).to be_a_valid_vis }
+    end
   end
 
   describe ".vin" do
-    context "with no options", :vcr do
+    context "with no options" do
       subject { described_class.vin }
 
       it { is_expected.to be_a_valid_vin }

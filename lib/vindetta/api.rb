@@ -3,10 +3,6 @@ require "json"
 
 module Vindetta
   class Api
-    def self.generate
-      Net::HTTP.get("randomvin.com", "/getvin.php")
-    end
-
     def self.decode(vin)
       uri = URI("https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/#{vin}?format=json")
 
