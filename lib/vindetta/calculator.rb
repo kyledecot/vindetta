@@ -4,7 +4,7 @@ module Vindetta
     WEIGHTS = [8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2]
 
     def self.check_digit(vin)
-      CHECK_DIGITS[sum(vin) % 11]
+      CHECK_DIGITS[sum(vin) % CHECK_DIGITS.length]
     end
 
     private
