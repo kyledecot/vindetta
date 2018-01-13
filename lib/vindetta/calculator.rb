@@ -9,7 +9,7 @@ module Vindetta
     def self.sum(vin)
       Transliterator
         .vin(vin)
-        .zip("876543210098765432".chars.map(&:to_i))
+        .zip([8, 7, 6, 5, 4, 3, 2, 10, 0, 9, 8, 7, 6, 5, 4, 3, 2])
         .reduce(0) { |sum, (a, b)| sum + (a * b) }
     end
   end

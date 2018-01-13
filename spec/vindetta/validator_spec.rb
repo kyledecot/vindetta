@@ -31,13 +31,13 @@ RSpec.describe Vindetta::Validator do
 
   describe ".vds" do
     describe "when valid" do
-      it { expect(described_class.vds("12345")).to be(true) }
+      it { expect(described_class.vds("123456")).to be(true) }
     end
   end
 
   describe ".vis" do
     describe "when valid" do
-      it { expect(described_class.vis("123456789")).to be(true) }
+      it { expect(described_class.vis("12345678")).to be(true) }
     end
   end
 end

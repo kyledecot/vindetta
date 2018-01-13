@@ -1,23 +1,23 @@
 module Vindetta
   class Validator
     def self.vin(vin)
-      return false unless vin.length == 17
+      return false unless vin.length == Vindetta::VIN_LENGTH
 
       Calculator.check_digit(vin) == Decoder.check_digit(vin)
     end
 
     def self.wmi(wmi)
-      return false unless wmi.length == 3
+      return false unless wmi.length == Vindetta::WMI_LENGTH
     end
 
     def self.vds(vds)
-      return false unless vds.length == 5
+      return false unless vds.length == Vindetta::VDS_LENGTH
 
       true
     end
 
     def self.vis(vis)
-      return false unless vis.length == 9
+      return false unless vis.length == Vindetta::VIS_LENGTH
 
       true
     end
