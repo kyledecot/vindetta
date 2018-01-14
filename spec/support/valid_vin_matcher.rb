@@ -1,5 +1,3 @@
 RSpec::Matchers.define :be_a_valid_vin do
-  match do |actual|
-    Vindetta::Validator.vin(actual)
-  end
+  match { |vin| Vindetta::Validator.vin(vin) }
 end

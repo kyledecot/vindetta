@@ -8,6 +8,8 @@ module Vindetta
 
     def self.wmi(wmi)
       return false unless wmi.length == Vindetta::WMI_LENGTH
+
+      true
     end
 
     def self.vds(vds)

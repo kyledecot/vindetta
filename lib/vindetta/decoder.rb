@@ -1,11 +1,7 @@
 require "vindetta/decoder/result"
-require "net/http"
-require "json"
 
 module Vindetta
   class Decoder
-    CHECK_DIGIT_INDEX = 8
-
     def self.vin(vin)
       Result.new(Api.decode(vin)["Results"])
     end

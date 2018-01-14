@@ -1,21 +1,17 @@
 module Vindetta
   class Generator
-    WMI_CHARACTERS = "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-    VDS_CHARACTERS = "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-    VIS_CHARACTERS = "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-
     def self.vin(options = {})
       "#{wmi}#{vds}#{vis}".tap do |vin|
-        vin[8] = Calculator.check_digit(vin)
+        vin[CHECK_DIGIT_INDEX] = Calculator.check_digit(vin)
       end
     end
 
     def self.wmi(_options = {})
-      WMI_CHARACTERS.sample(3).join("")
+      WMI_CHARACTERS.sample(WMI_LENGTH).join("")
     end
 
     def self.vds(_options = {})
-      VDS_CHARACTERS.sample(6).join("")
+      VDS_CHARACTERS.sample(VDS_LENGTH).join("")
     end
 
     ##
@@ -27,7 +23,7 @@ module Vindetta
     # code. The year code is the model year for the vehicle.
     #
     def self.vis(_options = {})
-      VIS_CHARACTERS.sample(8).join("")
+      VIS_CHARACTERS.sample(VIS_LENGTH).join("")
     end
   end
 end
