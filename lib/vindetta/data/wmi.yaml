@@ -197,7 +197,8 @@ wmi:
   VF6: Renault (Trucks & Buses)
   VF7: Citroën
   VF8: Matra
-  VF9/795: Bugatti
+  VF9: Bugatti
+  795: Bugatti
   VG5: MBK (motorcycles)
   VLU: Scania France
   VN1: SOVAB (France)
@@ -251,7 +252,8 @@ wmi:
   XLB: Volvo (NedCar)
   XLE: Scania Netherlands
   XLR: DAF (trucks)
-  XL9/363: Spyker
+  XL9: Spyker
+  363: Spyker
   XMC: Mitsubishi (NedCar)
   XTA: Lada/AvtoVAZ (Russia)
   XTC: KAMAZ (Russia)
@@ -277,8 +279,10 @@ wmi:
   YS3: Saab
   YS4: Scania Bus
   YTN: Saab NEVS
-  YT9/007: Koenigsegg
-  YT9/034: Carvia
+  YT9: Koenigsegg
+  007: Koenigsegg
+  YT9: Carvia
+  034: Carvia
   YU7: Husaberg (motorcycles)
   YV1: Volvo Cars
   YV4: Volvo Cars
