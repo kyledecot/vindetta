@@ -7,9 +7,12 @@ module Vindetta
     end
 
     def self.wmi(_options = {})
-      @wmi ||= YAML.load_file(File.expand_path("../data/wmi.yaml", __FILE__))
+      @wmis ||= begin
+        path = File.expand_path("../data/wmi.yaml", __FILE__)
+        YAML.load_file(path)["wmi"].keys
+      end
 
-      @wmi["wmi"].keys.sample.rjust(WMI_LENGTH, "9")
+      @wmis.sample.rjust(WMI_LENGTH, "9")
     end
 
     def self.vds(_options = {})
