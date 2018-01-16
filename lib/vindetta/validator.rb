@@ -3,7 +3,7 @@ module Vindetta
     def self.vin(vin)
       return false unless vin.length == Vindetta::VIN_LENGTH
 
-      Calculator.check_digit(vin) == Decoder.check_digit(vin)
+      Calculator.check_digit(vin) == Decoder.vin(vin)[:check_digit]
     end
 
     def self.wmi(wmi)
