@@ -7,7 +7,7 @@ module Vindetta
     end
 
     def self.plant_code(vin)
-      vin[10]
+      vin[PLANT_CODE_INDEX]
     end
 
     def self.check_digit(vin)
@@ -15,14 +15,14 @@ module Vindetta
     end
 
     def self.wmi(vin)
-      vin[0..2]
+      vin[WMI_RANGE]
     end
 
     def self.vds(vin, options = {})
       defaults = { check_digit: true }
       options = defaults.merge(options)
 
-      vin[3..CHECK_DIGIT_INDEX].tap do |vds|
+      vin[VDS_RANGE].tap do |vds|
         vds.chop! unless options[:check_digit]
       end
     end
@@ -32,11 +32,11 @@ module Vindetta
     end
 
     def self.vis(vin)
-      vin[9..16]
+      vin[VIS_RANGE]
     end
 
     def self.production_number(vin)
-      vin[11..16]
+      vin[PRODUCTION_NUMBER_RANGE]
     end
   end
 end
