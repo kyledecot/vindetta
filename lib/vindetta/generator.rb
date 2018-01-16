@@ -19,16 +19,11 @@ module Vindetta
       VDS_CHARACTERS.sample(VDS_LENGTH).join("")
     end
 
-    ##
-    # One consistent element of the VIS is the 10th digit,
-    # which is required worldwide to encode the model year of
-    # the vehicle. Besides the three letters that are not
-    # allowed in the VIN itself (I, O and Q), the letters U
-    # and Z and the digit 0 are not used for the model year
-    # code. The year code is the model year for the vehicle.
-    #
     def self.vis(_options = {})
-      VIS_CHARACTERS.sample(VIS_LENGTH).join("")
+      [
+        VIS_CHARACTERS.sample(VIS_LENGTH - 1),
+        MODEL_YEAR_CHARACTERS.sample
+      ].flatten.join("")
     end
   end
 end
