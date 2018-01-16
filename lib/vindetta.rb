@@ -1,4 +1,3 @@
-require "vindetta/api"
 require "vindetta/calculator"
 require "vindetta/cli"
 require "vindetta/decoder"

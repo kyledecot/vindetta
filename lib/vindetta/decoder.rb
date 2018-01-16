@@ -1,9 +1,9 @@
-require "vindetta/decoder/result"
-
 module Vindetta
   class Decoder
     def self.vin(vin)
-      Result.new(Api.decode(vin)["Results"])
+      {
+        :plant_code => plant_code(vin)
+      }
     end
 
     def self.plant_code(vin)

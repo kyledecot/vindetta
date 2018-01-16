@@ -1,8 +1,14 @@
 require "spec_helper"
 
 RSpec.describe Vindetta::Decoder do
-  describe ".vin", :vcr do
-    it { expect(described_class.vin("1G1RB6S56HU172687")).to be_a(Vindetta::Decoder::Result) }
+  describe ".vin" do
+    let(:result) { described_class.vin("1JTHL6511HT155941") }
+
+    it { expect(result[:year]).to eq(1987) }
+  end
+
+  describe ".production_number" do
+    it { expect(described_class.vin("1JTHL6511HT155941")[:production_number]).to eq("155941") }
   end
 
   describe ".wmi" do
@@ -27,13 +33,5 @@ RSpec.describe Vindetta::Decoder do
 
   describe ".vis" do
     it { expect(described_class.vis("1G1RB6S56HU172687")).to eq("HU172687") }
-  end
-
-  describe ".year" do
-    it { expect(described_class.year("1JTHL6511HT155941")).to eq(1987) }
-  end
-
-  describe ".production_number" do
-    it { expect(described_class.production_number("1JTHL6511HT155941")).to eq("155941") }
   end
 end
