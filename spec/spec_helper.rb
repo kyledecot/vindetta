@@ -17,3 +17,7 @@ end
 def run(command, args = [])
   stdout_str, stderr_str, status = Open3.capture3("./exe/vindetta #{command} #{args.join(' ')}")
 end
+
+def fixture(filename)
+  YAML.load_file(File.expand_path("../support/fixtures/#{filename}.yaml", __FILE__))
+end

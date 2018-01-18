@@ -1,0 +1,5 @@
+- vin: '11111111111111111'
+  model_year: 2001
+  wmi: '111'
+  production_number: '111111'
+  check_digit: '1'
