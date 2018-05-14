@@ -12,7 +12,7 @@ module Vindetta
         YAML.load_file(path)["wmi"].keys
       end
 
-      @wmis.sample.rjust(WMI_LENGTH, "9")
+      "#{@wmis.sample}".rjust(WMI_LENGTH, "9")
     end
 
     def self.vds(_options = {})
