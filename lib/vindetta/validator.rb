@@ -4,6 +4,8 @@ module Vindetta
       return false unless vin.length == Vindetta::VIN_LENGTH
 
       Calculator.check_digit(vin) == Decoder.vin(vin)[:check_digit]
+    rescue Calculator::InvalidCharacterError
+        false
     end
 
     def self.wmi(wmi)

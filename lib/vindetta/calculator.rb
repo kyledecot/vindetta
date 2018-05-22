@@ -1,8 +1,14 @@
 module Vindetta
   class Calculator
+    InvalidCharacterError = Class.new(StandardError)
+
     def self.check_digit(vin)
       transliterator = -> (c) do
-        "0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ".chars.index(c) % 10
+        index = "0123456789.ABCDEFGH..JKLMN.P.R..STUVWXYZ".chars.index(c)
+
+        raise InvalidCharacterError if index.nil?
+
+         index % 10
       end
 
       summer = -> (sum, (a, b)) do
