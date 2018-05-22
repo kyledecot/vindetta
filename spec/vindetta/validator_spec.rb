@@ -9,6 +9,10 @@ RSpec.describe Vindetta::Validator do
     end
 
     context "when invalid" do
+      describe "lowercase" do
+        it { expect(described_class.vin("ZACCJBBt0FPB63072")).to be(false) }
+      end
+
       describe "length" do
         it { expect(described_class.vin("1234")).to be(false) }
       end
