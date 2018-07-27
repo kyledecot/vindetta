@@ -12,10 +12,8 @@ module Vindetta
     program_desc "Vehicle Identification Number (VIN) CLI"
     version Vindetta::VERSION
 
-    commands_from "vindetta/cli/command"
-
     desc "Validates a VIN"
-
+    
     command %i[validate v] do |c|
       c.action do |_global, _options, args|
         vin = args.first

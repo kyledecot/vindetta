@@ -2,4 +2,4 @@
 
 require "vindetta"
 
-Vindetta::CLI.run(ARGV)
+exit Vindetta::CLI.run(ARGV)
