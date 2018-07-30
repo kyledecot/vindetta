@@ -21,8 +21,8 @@ module Vindetta
 
     def self.vis(_options = {})
       [
-        VIS_CHARACTERS.sample(VIS_LENGTH - 1),
-        MODEL_YEAR_CHARACTERS.sample
+        MODEL_YEAR_CHARACTERS.sample,
+        VIS_CHARACTERS.sample(VIS_LENGTH - 1)
       ].flatten.join("")
     end
   end
