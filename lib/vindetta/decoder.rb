@@ -1,5 +1,9 @@
 module Vindetta
   class Decoder
+    BASE_MODEL_YEAR = 1980
+    ALPHA = ('A'..'Z').to_a
+    NUMERIC = ("0".."9").to_a
+
     def self.vin(vin)
       {
         :plant_code => vin[PLANT_CODE_INDEX],
@@ -13,16 +17,12 @@ module Vindetta
     private
 
     def self.model_year(vin)
-      @years ||= YAML.load_file(File.expand_path("../data/vis.yaml", __FILE__))["year"]
-      @alpha ||= "ABCDEFGHJKLMNPRSTUVWXYZ".chars
+      index = ((ALPHA - %w[I O Q U Z]) + (NUMERIC - %w[0])).find_index { |c| c == vin[9] }
 
-      tenth = vin[9]
-      seventh = vin[6]
-
-      if @alpha.include?(seventh)
-        @years[tenth].last
+      if ALPHA.include?(vin[6])
+        BASE_MODEL_YEAR + index + 30
       else
-        @years[tenth].first
+        BASE_MODEL_YEAR + index
       end
     end
   end
