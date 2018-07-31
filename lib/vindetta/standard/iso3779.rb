@@ -10,9 +10,26 @@ module Vindetta
       end
 
       def self.vds
-        OpenStruct.new(
-          :length => 6
-        )
+        @vds ||= [
+          OpenStruct.new({
+            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
+          }),
+          OpenStruct.new({
+            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
+          }),
+          OpenStruct.new({
+            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
+          }),
+          OpenStruct.new({
+            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
+          }),
+          OpenStruct.new({
+            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
+          }),
+          OpenStruct.new({
+            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
+          })
+        ]
       end
 
       def self.vis
