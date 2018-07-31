@@ -22,15 +22,17 @@ module Vindetta
     end
 
     def vds(_options = {})
-      characters = standard.vds.map { |p| p["characters"] }
-
-      characters.map(&:sample).join
+      characters("vds").map(&:sample).join
     end
 
     def vis(_options = {})
-      characters = standard.vis.map(&:characters)
+      characters("vis").map(&:sample).join
+    end
 
-      characters.map(&:sample).join
+    private
+
+    def characters(section)
+      standard.send(section).map { |p| p["characters"] }
     end
   end
 end
