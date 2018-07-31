@@ -20,7 +20,10 @@ module Vindetta
 
         exit_now!(I18n.t("required"), 1) if vin.nil?
 
-        puts Vindetta::Validator.vin(vin)
+        standard = Vindetta::Standard::ISO3779
+        validator = Vindetta::Validator.new(standard)
+
+        puts validator.vin(vin)
       end
     end
 
@@ -43,7 +46,10 @@ module Vindetta
 
     command %i[generate g] do |c|
       c.action do |_global, _options, _args|
-        puts Vindetta::Generator.vin
+        standard = Vindetta::Standard::ISO3779
+        generator = Vindetta::Generator.new(standard)
+
+        puts generator.vin
       end
     end
   end

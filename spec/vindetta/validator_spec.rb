@@ -1,24 +1,26 @@
 require "spec_helper"
 
 RSpec.describe Vindetta::Validator do
+  let(:standard) { Vindetta::Standard::ISO3779 }
+
   describe ".vin" do
     context "when valid" do
       let(:vin) { "11111111111111111" }
 
-      it { expect(described_class.vin(vin)).to be(true) }
+      it { expect(described_class.new(standard).vin(vin)).to be(true) }
     end
 
     context "when invalid" do
       describe "lowercase" do
-        it { expect(described_class.vin("ZACCJBBt0FPB63072")).to be(false) }
+        it { expect(described_class.new(standard).vin("ZACCJBBt0FPB63072")).to be(false) }
       end
 
       describe "length" do
-        it { expect(described_class.vin("1234")).to be(false) }
+        it { expect(described_class.new(standard).vin("1234")).to be(false) }
       end
 
       describe "check digit" do
-        it { expect(described_class.vin("JN8AR16Y0RW090362")).to be(false) }
+        it { expect(described_class.new(standard).vin("JN8AR16Y0RW090362")).to be(false) }
       end
     end
   end
@@ -35,13 +37,13 @@ RSpec.describe Vindetta::Validator do
 
   describe ".vds" do
     describe "when valid" do
-      it { expect(described_class.vds("123456")).to be(true) }
+      it { expect(described_class.new(standard).vds("123456")).to be(true) }
     end
   end
 
   describe ".vis" do
     describe "when valid" do
-      it { expect(described_class.vis("12345678")).to be(true) }
+      it { expect(described_class.new(standard).vis("12345678")).to be(true) }
     end
   end
 end

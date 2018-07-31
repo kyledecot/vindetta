@@ -1,26 +1,32 @@
 module Vindetta
   class Validator
-    def self.vin(vin)
-      return false unless vin.length == Vindetta::VIN_LENGTH
+    attr_reader :standard
+
+    def initialize(standard)
+      @standard = standard
+    end
+
+    def vin(vin)
+      return false unless vin.length == standard::LENGTH
 
       Calculator.check_digit(vin) == Decoder.new(Vindetta::Standard::ISO3779).vin(vin)[:check_digit]
     rescue Calculator::InvalidCharacterError
         false
     end
 
-    def self.wmi(wmi)
+    def wmi(wmi)
       return false unless wmi.length == Vindetta::WMI_LENGTH
 
       true
     end
 
-    def self.vds(vds)
+    def vds(vds)
       return false unless vds.length == Vindetta::VDS_LENGTH
 
       true
     end
 
-    def self.vis(vis)
+    def vis(vis)
       return false unless vis.length == Vindetta::VIS_LENGTH
 
       true
