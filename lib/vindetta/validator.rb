@@ -15,19 +15,19 @@ module Vindetta
     end
 
     def wmi(wmi)
-      return false unless wmi.length == Vindetta::WMI_LENGTH
+      return false unless wmi.length == standard.wmi.length
 
       true
     end
 
     def vds(vds)
-      return false unless vds.length == Vindetta::VDS_LENGTH
+      return false unless vds.length == standard.vds.length
 
       true
     end
 
     def vis(vis)
-      return false unless vis.length == Vindetta::VIS_LENGTH
+      return false unless vis.length == standard.vis.length
 
       true
     end
