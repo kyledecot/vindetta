@@ -18,17 +18,17 @@ module Vindetta
         YAML.load_file(path)["wmi"].keys
       end
 
-      "#{@wmis.sample}".rjust(WMI_LENGTH, "9")
+      "#{@wmis.sample}".rjust(standard.wmi.length, "9")
     end
 
     def vds(_options = {})
-      VDS_CHARACTERS.sample(VDS_LENGTH).join("")
+      VDS_CHARACTERS.sample(standard.vds.length).join("")
     end
 
     def vis(_options = {})
       [
         MODEL_YEAR_CHARACTERS.sample,
-        VIS_CHARACTERS.sample(VIS_LENGTH - 1)
+        VIS_CHARACTERS.sample(standard.vis.length - 1)
       ].flatten.join("")
     end
   end
