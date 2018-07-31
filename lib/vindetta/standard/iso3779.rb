@@ -1,21 +1,27 @@
 module Vindetta
   module Standard
     class ISO3779
-      LENGTH = 17
-
       def self.wmi
-        OpenStruct.new(
-          :length => 3
-        )
+        @wmi ||= yml.fetch("wmi")
+      end
+
+      def self.length
+        @length ||= yml.fetch("length")
       end
 
       def self.vds
-        @vds ||= YAML.load_file("lib/vindetta/standard/iso3779.yml").fetch("vds")
+        @vds ||= yml.fetch("vds")
       end
 
       def self.vis
-        @vis ||= YAML.load_file("lib/vindetta/standard/iso3779.yml").fetch("vis")
+        @vis ||= yml.fetch("vis")
       end
+
+      def self.yml
+        @yml ||= YAML.load_file("lib/vindetta/standard/iso3779.yml")
+      end
+
+      private_class_method :yml
     end
   end
 end
