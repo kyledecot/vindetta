@@ -13,7 +13,7 @@ module Vindetta
     version Vindetta::VERSION
 
     desc "Validates a VIN"
-    
+
     command %i[validate v] do |c|
       c.action do |_global, _options, args|
         vin = args.first
@@ -32,7 +32,10 @@ module Vindetta
 
         exit_now!(I18n.t("required"), 1) if vin.nil?
 
-        puts Vindetta::Decoder.vin(vin)
+        standard = Vindetta::Standard::ISO3779
+        decoder = Vindetta::Decoder.new(standard)
+
+        puts decoder.vin(vin)
       end
     end
 

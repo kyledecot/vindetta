@@ -2,6 +2,7 @@ require "vindetta/calculator"
 require "vindetta/cli"
 require "vindetta/decoder"
 require "vindetta/generator"
+require "vindetta/standard"
 require "vindetta/validator"
 require "vindetta/version"
 

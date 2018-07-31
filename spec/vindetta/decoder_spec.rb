@@ -3,7 +3,7 @@ require "spec_helper"
 RSpec.describe Vindetta::Decoder do
   describe ".vin" do
     fixture("decoder").each do |row|
-      let(:result) { described_class.vin(row["vin"]) }
+      let(:result) { described_class.new(Vindetta::Standard::ISO3779).vin(row["vin"]) }
 
       describe row["vin"] do
         it { expect(result[:production_number]).to eq(row["production_number"]) }

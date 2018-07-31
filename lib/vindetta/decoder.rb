@@ -4,8 +4,12 @@ module Vindetta
     ALPHA = ('A'..'Z').to_a
     NUMERIC = ("0".."9").to_a
 
-    def self.vin(vin)
-      {
+    def initialize(standard)
+      @standard = standard
+    end
+
+    def vin(vin)
+       {
         :plant_code => vin[PLANT_CODE_INDEX],
         :wmi => vin[WMI_RANGE],
         :check_digit => vin[CHECK_DIGIT_INDEX],
@@ -16,7 +20,7 @@ module Vindetta
 
     private
 
-    def self.model_year(vin)
+    def model_year(vin)
       index = ((ALPHA - %w[I O Q U Z]) + (NUMERIC - %w[0])).find_index { |c| c == vin[9] }
 
       if ALPHA.include?(vin[6])

@@ -3,7 +3,7 @@ module Vindetta
     def self.vin(vin)
       return false unless vin.length == Vindetta::VIN_LENGTH
 
-      Calculator.check_digit(vin) == Decoder.vin(vin)[:check_digit]
+      Calculator.check_digit(vin) == Decoder.new(Vindetta::Standard::ISO3779).vin(vin)[:check_digit]
     rescue Calculator::InvalidCharacterError
         false
     end
