@@ -28,10 +28,9 @@ module Vindetta
     end
 
     def vis(_options = {})
-      [
-        MODEL_YEAR_CHARACTERS.sample,
-        VIS_CHARACTERS.sample(standard.vis.length - 1)
-      ].flatten.join("")
+      characters = standard.vis.map(&:characters)
+
+      characters.map(&:sample).join
     end
   end
 end
