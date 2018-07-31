@@ -22,7 +22,7 @@ module Vindetta
     end
 
     def vds(_options = {})
-      characters = standard.vds.map(&:characters)
+      characters = standard.vds.map { |p| p["characters"] }
 
       characters.map(&:sample).join
     end

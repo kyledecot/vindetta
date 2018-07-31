@@ -10,26 +10,7 @@ module Vindetta
       end
 
       def self.vds
-        @vds ||= [
-          OpenStruct.new({
-            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-          }),
-          OpenStruct.new({
-            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-          }),
-          OpenStruct.new({
-            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-          }),
-          OpenStruct.new({
-            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-          }),
-          OpenStruct.new({
-            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-          }),
-          OpenStruct.new({
-            :characters => "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars
-          })
-        ]
+        @vds ||= YAML.load_file("lib/vindetta/standard/iso3779.yml").fetch("vds")
       end
 
       def self.vis
