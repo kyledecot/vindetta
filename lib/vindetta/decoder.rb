@@ -1,5 +1,7 @@
 module Vindetta
   class Decoder
+    attr_reader :standard
+
     BASE_MODEL_YEAR = 1980
     ALPHA = ('A'..'Z').to_a
     NUMERIC = ("0".."9").to_a
@@ -21,7 +23,10 @@ module Vindetta
     private
 
     def model_year(vin)
-      index = ((ALPHA - %w[I O Q U Z]) + (NUMERIC - %w[0])).find_index { |c| c == vin[9] }
+      position = standard.vis.detect { |p| p["name"] === "model_year" }
+      characters = position["characters"]
+
+      index = characters.find_index { |c| c == vin[9] }
 
       if ALPHA.include?(vin[6])
         BASE_MODEL_YEAR + index + 30

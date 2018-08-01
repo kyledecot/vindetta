@@ -4,6 +4,7 @@ SimpleCov.start
 require "bundler/setup"
 require "vindetta"
 require "open3"
+require "pry"
 
 Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each { |f| require f }
 
