@@ -17,10 +17,18 @@ module Vindetta
         :check_digit => vin[CHECK_DIGIT_INDEX],
         :production_number => vin[PRODUCTION_NUMBER_RANGE],
         :model_year => model_year(vin),
+        :region => region(vin)
       }
     end
 
     private
+
+    def region(vin)
+      character = vin[0]
+      position = standard.wmi.detect { |p| p["name"] == "region" }
+
+      position["mapping"][character]
+    end
 
     def model_year(vin)
       position = standard.vis.detect { |p| p["name"] === "model_year" }

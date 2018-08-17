@@ -15,7 +15,7 @@ module Vindetta
     end
 
     def wmi(wmi)
-      wmi.length == standard.wmi["length"]
+      wmi.length == standard.wmi.length
     end
 
     def vds(vds)

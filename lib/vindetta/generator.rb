@@ -13,9 +13,7 @@ module Vindetta
     end
 
     def wmi(_options = {})
-      wmis ||= standard.wmi["values"].keys
-
-      "#{wmis.sample}".rjust(standard.wmi["length"], "9")
+      characters("wmi").map(&:sample).join
     end
 
     def vds(_options = {})
