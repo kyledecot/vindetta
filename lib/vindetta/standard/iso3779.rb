@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vindetta
   module Standard
     class ISO3779

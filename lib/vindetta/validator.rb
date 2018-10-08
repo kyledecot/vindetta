@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vindetta
   class Validator
     attr_reader :standard
@@ -11,7 +13,7 @@ module Vindetta
 
       Calculator.check_digit(vin) == Decoder.new(Vindetta::Standard::ISO3779).vin(vin)[:check_digit]
     rescue Calculator::InvalidCharacterError
-        false
+      false
     end
 
     def wmi(wmi)

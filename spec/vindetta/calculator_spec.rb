@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "spec_helper"
 
 RSpec.describe Vindetta::Calculator do
@@ -9,9 +11,9 @@ RSpec.describe Vindetta::Calculator do
 
     describe "with invalid VIN" do
       it "raises " do
-        expect {
+        expect do
           described_class.check_digit("ZACCJBBt0FPB63072")
-        }.to raise_error(described_class::InvalidCharacterError)
+        end.to raise_error(described_class::InvalidCharacterError)
       end
     end
   end
