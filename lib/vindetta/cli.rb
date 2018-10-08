@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "gli"
 require "vindetta/version"
 require "i18n"

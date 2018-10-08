@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "vindetta/calculator"
 require "vindetta/cli"
 require "vindetta/decoder"

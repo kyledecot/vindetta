@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 module Vindetta
   class Decoder
     attr_reader :standard
 
     BASE_MODEL_YEAR = 1980
-    ALPHA = ('A'..'Z').to_a
+    ALPHA = ("A".."Z").to_a
     NUMERIC = ("0".."9").to_a
 
     def initialize(standard)
@@ -11,13 +13,13 @@ module Vindetta
     end
 
     def vin(vin)
-       {
-        :plant_code => vin[PLANT_CODE_INDEX],
-        :wmi => vin[WMI_RANGE],
-        :check_digit => vin[CHECK_DIGIT_INDEX],
-        :production_number => vin[PRODUCTION_NUMBER_RANGE],
-        :model_year => model_year(vin),
-        :region => region(vin)
+      {
+        plant_code: vin[PLANT_CODE_INDEX],
+        wmi: vin[WMI_RANGE],
+        check_digit: vin[CHECK_DIGIT_INDEX],
+        production_number: vin[PRODUCTION_NUMBER_RANGE],
+        model_year: model_year(vin),
+        region: region(vin)
       }
     end
 

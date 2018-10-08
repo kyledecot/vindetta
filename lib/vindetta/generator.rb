@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Vindetta
   class Generator
     attr_reader :standard
@@ -6,8 +8,8 @@ module Vindetta
       @standard = standard
     end
 
-    def vin(options = {})
-      "#{wmi}#{vds}#{vis}".tap do |vin|
+    def vin(_options = {})
+      String.new("#{wmi}#{vds}#{vis}").tap do |vin|
         vin[CHECK_DIGIT_INDEX] = Calculator.check_digit(vin)
       end
     end
