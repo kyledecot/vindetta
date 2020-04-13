@@ -20,7 +20,11 @@ module Vindetta
       end
 
       def self.yml
-        @yml ||= YAML.load_file("lib/vindetta/standard/iso3779.yml")
+        @yml ||= begin
+          File.open(File.expand_path("iso3779.yml", __dir__)) do |file|
+            YAML.load_file(file)
+          end
+        end
       end
 
       private_class_method :yml
