@@ -2,5 +2,6 @@
 # frozen_string_literal: true
 
 require "vindetta"
+require "vindetta/cli"
 
 exit Vindetta::CLI.run(ARGV)
