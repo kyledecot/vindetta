@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "yaml"
+
 module Vindetta
   module Standard
     class ISO3779
@@ -20,7 +22,7 @@ module Vindetta
       end
 
       def self.yml
-        @yml ||= YAML.load_file("lib/vindetta/standard/iso3779.yml")
+        @yml ||= YAML.load_file(File.expand_path("lib/vindetta/standard/iso3779.yml", __dir__))
       end
 
       private_class_method :yml
