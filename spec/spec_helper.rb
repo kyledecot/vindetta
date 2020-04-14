@@ -4,8 +4,10 @@ require "simplecov"
 SimpleCov.start
 
 require "bundler/setup"
+
 require "vindetta"
-requier "vindetta/cli"
+require "vindetta/cli"
+
 require "open3"
 require "pry"
 
