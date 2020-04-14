@@ -5,6 +5,7 @@ SimpleCov.start
 
 require "bundler/setup"
 require "vindetta"
+requier "vindetta/cli"
 require "open3"
 require "pry"
 
