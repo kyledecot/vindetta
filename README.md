@@ -1,6 +1,4 @@
 # Vindetta
-[![Gem version](http://img.shields.io/gem/v/vindetta.svg)](http://rubygems.org/gems/vindetta)
-[![Code Climate](https://codeclimate.com/github/kyledecot/vindetta/badges/gpa.svg)](https://codeclimate.com/github/kyledecot/vindetta)
 
 ## Installation
 
