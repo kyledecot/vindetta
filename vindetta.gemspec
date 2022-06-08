@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "gli", "~> 2.16"
-  spec.add_dependency "i18n", "~> 0.9.1"
+  spec.add_dependency "i18n", "~> 1.10.0"
 
   spec.add_development_dependency "bundler", "~> 2.1"
   spec.add_development_dependency "guard-rspec", "~> 4.7.3"
