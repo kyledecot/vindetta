@@ -11,12 +11,6 @@ module Vindetta
     def vin(options = {})
       model_year = options[:model_year]
 
-      # if model_year 
-      #   if  model_year < Decoder::BASE_MODEL_YEAR
-      #     raise InvalidModelYear, "Model year must be greater than #{Decoder::BASE_MODEL_YEAR}"
-      #   end 
-      # end 
-
       String.new("#{wmi}#{vds}#{vis}").tap do |vin|        
         if model_year
           first, second = Calculator.model_year_digits(model_year) 
