@@ -29,6 +29,17 @@ RSpec.describe Vindetta::Generator do
       subject { generator.vin }
 
       it { is_expected.to be_a_valid_vin }
-    end
+    end 
+
+    context "with options" do 
+      describe "model year" do 
+        let(:model_year) { 2012 }
+
+        subject { generator.vin(model_year: model_year) }
+
+        it { is_expected.to be_a_valid_vin }
+        it { is_expected.to be_of_model_year(model_year) }
+      end 
+    end 
   end
 end

@@ -47,11 +47,15 @@ module Vindetta
     desc "Generates a random VIN"
 
     command %i[generate g] do |c|
-      c.action do |_global, _options, _args|
+      c.desc 'Model year'
+      c.flag [:m,'model-year'], type: Numeric
+
+      c.action do |_global, options, _args|
         standard = Vindetta::Standard::ISO3779
         generator = Vindetta::Generator.new(standard)
+        model_year = options['model-year']
 
-        puts generator.vin
+        puts generator.vin({ model_year: model_year })
       end
     end
   end

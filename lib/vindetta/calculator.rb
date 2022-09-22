@@ -25,5 +25,16 @@ module Vindetta
 
       "0123456789X"[sum % 11]
     end
+
+    def self.model_year_digits(model_year)
+      standard = Vindetta::Standard::ISO3779
+      characters = standard.vis.find { |v| v["name"] == "model_year" }["characters"]
+      offset = model_year >= Decoder::BASE_MODEL_YEAR + characters.length ? characters.length : 0
+      characters_by_year = characters.map.with_index { |c,i| [Decoder::BASE_MODEL_YEAR + i + offset, c] }.to_h
+      first = model_year >= Decoder::BASE_MODEL_YEAR + characters.length ? "A" : "1"
+      second = characters_by_year[model_year]
+
+      [first, second]
+    end 
   end
 end

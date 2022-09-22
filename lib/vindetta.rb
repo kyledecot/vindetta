@@ -8,7 +8,9 @@ require "vindetta/validator"
 require "vindetta/version"
 
 module Vindetta
+  MODEL_YEAR_DIGIT_1_INDEX = 6
   CHECK_DIGIT_INDEX = 8
+  MODEL_YEAR_DIGIT_2_INDEX = 9
   PLANT_CODE_INDEX = 10
 
   VIS_CHARACTERS = "0123456789ABCDEFGHJKLMNPRSTUVWXYZ".chars

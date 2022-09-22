@@ -35,14 +35,10 @@ module Vindetta
     def model_year(vin)
       position = standard.vis.detect { |p| p["name"] === "model_year" }
       characters = position["characters"]
+      additional = ALPHA.include?(vin[MODEL_YEAR_DIGIT_1_INDEX]) ? 30 : 0
+      index = characters.find_index { |c| c == vin[MODEL_YEAR_DIGIT_2_INDEX] }
 
-      index = characters.find_index { |c| c == vin[9] }
-
-      if ALPHA.include?(vin[6])
-        BASE_MODEL_YEAR + index + 30
-      else
-        BASE_MODEL_YEAR + index
-      end
+      BASE_MODEL_YEAR + index + additional
     end
   end
 end

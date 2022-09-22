@@ -8,8 +8,23 @@ module Vindetta
       @standard = standard
     end
 
-    def vin(_options = {})
-      String.new("#{wmi}#{vds}#{vis}").tap do |vin|
+    def vin(options = {})
+      model_year = options[:model_year]
+
+      # if model_year 
+      #   if  model_year < Decoder::BASE_MODEL_YEAR
+      #     raise InvalidModelYear, "Model year must be greater than #{Decoder::BASE_MODEL_YEAR}"
+      #   end 
+      # end 
+
+      String.new("#{wmi}#{vds}#{vis}").tap do |vin|        
+        if model_year
+          first, second = Calculator.model_year_digits(model_year) 
+
+          vin[MODEL_YEAR_DIGIT_1_INDEX] = first
+          vin[MODEL_YEAR_DIGIT_2_INDEX] = second
+        end 
+
         vin[CHECK_DIGIT_INDEX] = Calculator.check_digit(vin)
       end
     end
