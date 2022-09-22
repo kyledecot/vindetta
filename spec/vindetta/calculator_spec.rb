@@ -18,10 +18,10 @@ RSpec.describe Vindetta::Calculator do
     end
   end
 
-  describe ".model_year_digits" do 
-    it do 
-      expect(described_class.model_year_digits(1986)).to match_array(["1", "G"])
-      expect(described_class.model_year_digits(2022)).to match_array(["A", "N"])
-    end 
-  end 
+  describe ".model_year_digits" do
+    it do
+      expect(described_class.model_year_digits(1986)).to match_array(%w[1 G])
+      expect(described_class.model_year_digits(2022)).to match_array(%w[A N])
+    end
+  end
 end

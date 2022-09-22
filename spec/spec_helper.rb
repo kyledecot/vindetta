@@ -11,7 +11,7 @@ require "vindetta/cli"
 require "open3"
 require "pry"
 
-Dir[File.dirname(__FILE__) + "/support/**/*.rb"].each { |f| require f }
+Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = ".rspec_status"

@@ -11,13 +11,13 @@ module Vindetta
     def vin(options = {})
       model_year = options[:model_year]
 
-      String.new("#{wmi}#{vds}#{vis}").tap do |vin|        
+      String.new("#{wmi}#{vds}#{vis}").tap do |vin|
         if model_year
-          first, second = Calculator.model_year_digits(model_year) 
+          first, second = Calculator.model_year_digits(model_year)
 
           vin[MODEL_YEAR_DIGIT_1_INDEX] = first
           vin[MODEL_YEAR_DIGIT_2_INDEX] = second
-        end 
+        end
 
         vin[CHECK_DIGIT_INDEX] = Calculator.check_digit(vin)
       end
