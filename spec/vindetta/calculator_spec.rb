@@ -10,7 +10,7 @@ RSpec.describe Vindetta::Calculator do
     end
 
     describe "with invalid VIN" do
-      it "raises " do
+      it "raises" do
         expect do
           described_class.check_digit("ZACCJBBt0FPB63072")
         end.to raise_error(described_class::InvalidCharacterError)
